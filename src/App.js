@@ -54,3 +54,4 @@ const displayAlert = () => {
 export default App;
 //to pass objects as props the syntax needs to have double curly braces
 // <Greeting person={{ name:"Mike", numberOfMessages: 10}} />
+//Lesson 1 done - 1/26/23
