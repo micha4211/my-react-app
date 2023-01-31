@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-//since we moved the state to app.js we are not passing the props back to this component
+import React, { useEffect } from 'react';
+
 export const CounterButton = ({ onIncrement, numberOfClicks }) => {
-//To make the data available to other components the state must be placed in the 
-//parent component or the main app.js comp
-    //const [numberOfClicks, setNumberOfClicks] = useState(0);
-    //const increment = () => setNumberOfClicks(numberOfClicks + 1);
+    useEffect(() => {
+        console.log("use effect function called");
+    }, []);
+    //can second arguement that the use effection function would watch for to change.
+    //just leave the array as empty to only have the call run when it first loads.
     return (
         <>
         <p>You've clicked the button {numberOfClicks} times</p>
