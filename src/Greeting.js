@@ -2,7 +2,6 @@ import React from 'react';
 
 //putting export in front creates a named export
 export const Greeting = ({name, numberOfMessages}) => {
-    console.log("Rendering Greeting");
     if (!name) return null;
     let isMorning = (new Date()).getHours() < 12;
     let greetingHeader = isMorning
