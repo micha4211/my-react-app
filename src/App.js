@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-router-dom';
 import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage } from './pages';
 import './App.css';
 import { CounterButton } from './CounterButton';
@@ -12,8 +12,10 @@ function App() {
   const [hideMessage, setHideMessage] = useState(false);
   const increment = () => setNumberOfClicks(numberOfClicks + 1);
 //Need to pass the increment function to the counterbutton component so it knows what to add one
+
 return (
     <div className="App">
+      
     <>
       <Router>
         <Link to="/">Home Page |</Link>
@@ -32,6 +34,7 @@ return (
         </Routes>
       </Router>
     </>
+    
     </div>
   );
 }
