@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { HomePage, CounterButtonPage, PeopleListPage } from './pages';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage } from './pages';
 import './App.css';
 import { CounterButton } from './CounterButton';
 import { Greeting } from './Greeting';
@@ -26,6 +26,7 @@ return (
 
             <Route path="/people" element={<PeopleListPage />} />
 
+            <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>
     </>
