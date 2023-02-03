@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HomePage, CounterButtonPage, PeopleListPage } from './pages';
 import './App.css';
 import { CounterButton } from './CounterButton';
 import { Greeting } from './Greeting';
@@ -12,17 +14,21 @@ function App() {
 //Need to pass the increment function to the counterbutton component so it knows what to add one
 return (
     <div className="App">
-      <header className="App-header">
-        {hideMessage
-          ? null
-          : <CongratulationsMessage 
-              numberOfClicks={numberOfClicks} 
-              threshold={10} 
-              onHide={() => setHideMessage(true)} />
-        }
-        
-        <CounterButton onIncrement={increment} numberOfClicks={numberOfClicks}/>
-      </header>
+    <>
+      <Router>
+        <Link to="/">Home Page |</Link>
+        <Link to="/counter"> Counter Page | </Link>
+        <Link to="/people"> People Page</Link>
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+
+            <Route path="/counter" element={<CounterButtonPage />} />
+
+            <Route path="/people" element={<PeopleListPage />} />
+
+        </Routes>
+      </Router>
+    </>
     </div>
   );
 }
