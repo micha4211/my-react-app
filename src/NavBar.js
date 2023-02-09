@@ -6,6 +6,7 @@ export const NavBar = () => (
         <li><Link to="/">Home Page</Link></li>
         <li> <Link to="/counter">Counter Page</Link></li>
         <li><Link to="/people">People Page</Link></li>
+        <li><Link to="/user">User Profile</Link></li>
         <li><Link to="/forms">Forms</Link></li>
     </ul>
 )
