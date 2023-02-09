@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-router-dom';
-import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage, ControlledFormPage, UncontrolledFormPage } from './pages';
+import { HomePage, CounterButtonPage, PeopleListPage, NotFoundPage, ProtectedPage } from './pages';
 import './App.css';
 import { CounterButton } from './CounterButton';
 import { Greeting } from './Greeting';
@@ -18,11 +18,9 @@ return (
       
     <>
       <Router>
-        <Link to="/">Home Page</Link>&nbsp;|&nbsp;
-        <Link to="/counter">Counter Page</Link>&nbsp;|&nbsp;
-        <Link to="/people">People Page</Link>&nbsp;|&nbsp;
-        <Link to="/controlled">Controlled Forms</Link>&nbsp;|&nbsp;
-        <Link to="/uncontrolled">Uncontrolled Forms</Link>
+        <Link to="/">Home Page |</Link>
+        <Link to="/counter"> Counter Page | </Link>
+        <Link to="/people"> People Page</Link>
         <Routes>
             <Route path="/" element={<HomePage />} />
 
@@ -31,10 +29,6 @@ return (
             <Route path="/people" element={<PeopleListPage />} />
 
             <Route path="/protected" element={<ProtectedPage />} />
-
-            <Route path="/controlled" element={<ControlledFormPage />} />
-
-            <Route path="/uncontrolled" element={<UncontrolledFormPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
         </Routes>
